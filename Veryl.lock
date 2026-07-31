@@ -3,8 +3,15 @@
 version = 1
 
 [[projects]]
-name = "uart"
-source = "../uart"
+name = "gndless_uart"
 dependencies = []
+
+[projects.source]
+uuid = "bd77b1cd-b8ee-5a5f-ba55-4a173c2b259a"
+url = "https://github.com/AkiyukiOkayasu/gndless-uart-veryl"
+path = ""
+project = "gndless_uart"
+version = "0.1.0"
+revision = "c3d00f85f590304056f539ab5fb45a61190fa8b0"
 
 [projects.properties]

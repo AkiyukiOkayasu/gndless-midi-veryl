@@ -3,7 +3,7 @@
 /// 非同期MIDI入力を同期化して8N1のデータを受信し、1バイト受信ごとに`valid`を1クロックだけアサート
 ///
 /// `CLK_FREQ`は入力クロック周波数をHzで指定。
-/// 8N1 frame、LSB-first、中央samplingのタイミングは`uart::UartRx`のWavedromを参照。本moduleではその前段に2段synchronizerが加わる。
+/// 8N1 frame、LSB-first、中央samplingのタイミングは`gndless_uart::UartRx`のWavedromを参照。本moduleではその前段に2段synchronizerが加わる。
 pub module MidiRx #(
     param CLK_FREQ: u32 = 50_000_000, /// 入力クロック周波数 [Hz]
 ) (
@@ -28,7 +28,7 @@ pub module MidiRx #(
     );
 
     // 同期済み信号をUART受信モジュールに渡す
-    inst u_uart_rx: uart::UartRx #(
+    inst u_uart_rx: gndless_uart::UartRx #(
         CLK_FREQ  : CLK_FREQ,
         BAUD_RATE : 31250   ,
         DATA_WIDTH: 8       ,
