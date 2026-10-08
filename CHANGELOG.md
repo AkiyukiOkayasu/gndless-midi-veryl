@@ -6,7 +6,9 @@
 - doc commentの句点と体言止めの表記を整理
 - doc commentのsummary表記を統一
 - MIDI受信testへ検証目的を示すdoc commentを追加
+
 ### Changed
 
 - MIDI byte receiverをUART依存の独立packageへ移動
 - UART frame timingは`UartRx`のWavedromを参照することをmodule documentationへ明記
+- `gndless_uart` の `UartRx` を namespace import し、完全修飾パスを短縮（Veryl 0.21 の namespace import 機能を使用）
